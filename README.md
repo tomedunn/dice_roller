@@ -6,7 +6,15 @@ This module calculates probabilities for dice equations, provided in the form of
 
 ```python
 from dice_roller import *
+import matplotlib.pyplot as plt
 
 d = Dice_Roller('3d6 + 5')
-print(f'mean = {d.value.mean()}; std = {d.value.standard_deviation()}')
+
+fig, ax = plt.subplots()
+ax.plot(d.value.outcomes(), d.value.probabilities())
+ax.set_xlabel('value')
+ax.set_ylabel('probability')
+plt.show()
 ```
+
+![probability distribution example](https://github.com/tomedunn/dice_roller/blob/master/assets/images/example-distribution.png?raw=true)
