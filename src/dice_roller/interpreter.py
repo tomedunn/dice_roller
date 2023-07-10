@@ -1,4 +1,4 @@
-from dnd5e_tools.dice_roller.nodes import *
+from dice_roller.nodes import *
 
 class Interpreter:
     def evaluate(self, node):
